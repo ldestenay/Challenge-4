@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyX : MonoBehaviour
 {
-    private float speed = 10;
+    private float speed;
     private Rigidbody enemyRb;
     private GameObject playerGoal;
 
@@ -13,6 +11,7 @@ public class EnemyX : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         playerGoal = GameObject.Find("Player");
+        speed = GameObject.Find("Spawn Manager").GetComponent<SpawnManagerX>().enemySpeed;
     }
 
     // Update is called once per frame
